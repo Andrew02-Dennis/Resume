@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Andrew Dennis - Resume</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="download-container">
+    <button id="downloadBtn">📄 Download PDF</button>
+  </div>
+
+  <div class="resume" id="resume">
+    <header>
+      <h1>ANDREW DENNIS</h1>
+      <p class="subtitle">Information Technology</p>
+      <div class="contact-info">
+        <p>📞 864-593-4479 | 📧 ajdennis02@outlook.com</p>
+        <p>📍 108 Aiken Farm Rd, Pickens, SC 29671</p>
+      </div>
+    </header>
+
+    <section class="summary">
+      <p>
+        Eager and motivated Onsite Technician with a strong desire to grow and expand technical expertise in the IT field.<br> Known for a hands-on approach to troubleshooting and a commitment to learning, with a focus on delivering reliable support to end users.
+      </p>
+    </section>
+
+    <main class="main-content">
+      <div class="left">
+        <section>
+          <h2>EDUCATION</h2>
+          <p><strong>Southern Wesleyan University</strong><br>2020-2024<br>Degree - Computer Information Systems</p>
+          <p><strong>Pickens High School</strong><br>2016-2020</p>
+        </section>
+
+        <section>
+          <h2>SKILLS</h2>
+          <ul>
+            <li>Front-end Development</li>
+            <li>Clear communication with users (especially non-technical users)</li>
+            <li>Ability to follow procedures and policies</li>
+            <li>Detail-oriented</li>
+            <li>Exceptional social skills</li>
+            <li>Programming in SwiftUI</li>
+            <li>Hardware/Software troubleshooting for Microsoft</li>
+            <li>Active Directory</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>OTHER WORK</h2>
+          <p><strong>Pickens Dream Center</strong><br>2017-2018</p>
+          <p><strong>Smith Heating and Air</strong><br>2018-2020</p>
+          <p><strong>Fatz</strong><br>2021-2022</p>
+        </section>
+      </div>
+
+      <div class="right">
+        <section>
+          <h2>PROFESSIONAL EXPERIENCE</h2>
+
+          <div class="job">
+            <h3>Southern Wesleyan University Report Intern</h3>
+            <span>2022 - 2023</span>
+            <ul>
+              <li>Wrote SQL queries for the advancement department.</li>
+              <li>Created reports in Excel to track donors.</li>
+              <li>Navigated databases to pull and organize information.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <h3>Southern Wesleyan University Help Desk</h3>
+            <span>2020 - 2022</span>
+            <ul>
+              <li>Provided frontline support for Microsoft and Apple products.</li>
+              <li>Maintained records of user issues and resolutions.</li>
+              <li>Assisted in network installations (cabling, switches).</li>
+              <li>Supported employee mobile devices.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <h3>Safe IT Managed Services</h3>
+            <span>2024 - Present </span>
+            <ul>
+              <li>Greet and assist end users with basic tech issues</li>
+              <li>Log and track support tickets using Autotask </li>
+              <li>Troubleshoot basic hardware issues</li>
+              <li>Reimage or replace desktops and laptops</li>
+              <li>Perform on-site repairs (hardware swaps, SSD upgrades, network drops)</li>
+              <li>Configure and deploy devices (PCs, printers, mobile devices)</li>
+              <li>Provide support for company-specific applications and systems</li>
+              <li>Work with vendors or remote teams for resolution of escalated issues</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <script>
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+      const resume = document.getElementById("resume");
+      html2pdf().from(resume).set({
+        margin: 0.5,
+        filename: "Andrew_Dennis_Resume.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "in", format: "letter", orientation: "portrait" }
+      }).save();
+    });
+  </script>
+</body>
+</html>
